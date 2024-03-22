@@ -8,16 +8,12 @@ if ( isset($_GET['controller']) ) {
     exit();
 }
 
-if (class_exists( $name_controller)) {
-
-    echo $name_controller;
+if (class_exists( $name_controller )) {
     $controller = new $name_controller();
 
-    var_dump($controller);
-
-    if ( !isset($_GET['action']) && method_exists($controller, $_GET['action']) ) {
+    if ( isset($_GET['action']) && method_exists($controller, $_GET['action']) ) {
         $action = $_GET['action'];
-        $controller->$action;
+        $controller->$action();
     } else {
         echo 'La pagina que buscas no existe 2';
     }

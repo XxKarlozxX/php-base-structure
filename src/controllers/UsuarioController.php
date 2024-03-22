@@ -2,7 +2,7 @@
 
 class UsuarioController {
     
-    public function index() {
-        echo 'entrando desde metodo index';
+    public function inicio() {
+        echo 'mensaje desde Usuario controller, metodo inicio';
     }
 }
